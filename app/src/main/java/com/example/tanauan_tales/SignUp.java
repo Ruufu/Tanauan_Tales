@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,12 +22,21 @@ public class SignUp extends AppCompatActivity {
         txt_Email = findViewById(R.id.txt_Email);
         txt_Pass = findViewById(R.id.txt_Password);
         register_btn = findViewById(R.id.register_btn);
+        back_btn = findViewById(R.id.backBtn);
         dbms = new DatabaseManager(this);
+
+        back_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                returnToLogin();
+            }
+        });
 
     }
     DatabaseManager dbms;
     private EditText txt_Name, txt_Email, txt_Pass;
     Button register_btn;
+    ImageButton back_btn;
 
     private void saveDetails(View view)
     {

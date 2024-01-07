@@ -78,7 +78,6 @@
 
     <ImageButton
         android:id="@+id/backBtn"
-        android:onClick="returnToLogin"
         app:srcCompat="@drawable/back_arrow"
         style="@style/rawr" />
 
