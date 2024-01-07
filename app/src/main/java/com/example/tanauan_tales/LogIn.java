@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 public class LogIn extends AppCompatActivity {
 
@@ -14,6 +15,7 @@ public class LogIn extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.log_in);
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
         Button btn_signup = findViewById(R.id.signup_btn);
         Button btn_login = findViewById(R.id.login_btn);
@@ -33,6 +35,8 @@ public class LogIn extends AppCompatActivity {
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent loginIntent = new Intent(getApplicationContext(), HomePage.class);
+                startActivity(loginIntent);
             }
         });
     }

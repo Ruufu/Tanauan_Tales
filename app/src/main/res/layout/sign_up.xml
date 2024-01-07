@@ -30,7 +30,7 @@
 
 
             <EditText
-                android:id="@+id/name_sn"
+                android:id="@+id/txt_Name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="75dp"
@@ -42,7 +42,7 @@
                 android:textSize="20sp" />
 
             <EditText
-                android:id="@+id/email"
+                android:id="@+id/txt_Email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="75dp"
@@ -53,7 +53,7 @@
                 android:textSize="20sp" />
 
             <EditText
-                android:id="@+id/password"
+                android:id="@+id/txt_Password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="75dp"
@@ -70,6 +70,7 @@
                 android:layout_gravity="center_vertical|center_horizontal"
                 android:layout_marginTop="20dp"
                 android:text="Register"
+                android:onClick="saveDetails"
                 android:textSize="20sp"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -77,13 +78,8 @@
 
     <ImageButton
         android:id="@+id/backBtn"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:background="@null"
-        android:scaleType="fitCenter"
-        android:adjustViewBounds="true"
-        app:srcCompat="@drawable/back_arrow" />
+        android:onClick="returnToLogin"
+        app:srcCompat="@drawable/back_arrow"
+        style="@style/rawr" />
 
 </RelativeLayout>
