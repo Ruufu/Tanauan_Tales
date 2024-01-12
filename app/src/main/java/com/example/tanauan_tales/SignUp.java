@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
 public class SignUp extends AppCompatActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +33,14 @@ public class SignUp extends AppCompatActivity {
             }
         });
 
+        register_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                saveDetails(view);
+            }
+        });
     }
+
     DatabaseManager dbms;
     private EditText txt_Name, txt_Email, txt_Pass;
     Button register_btn;
@@ -51,9 +59,9 @@ public class SignUp extends AppCompatActivity {
             {
                 String emailID = contents[i][0];
                 String passwordID = contents[i][1];
-
             }
             Toast.makeText(this,"No Input Detected", Toast.LENGTH_LONG).show();
+            return;
         }
         dbms.setData(contentA, contentB, contentC);
         Toast.makeText(this,"Registration Complete", Toast.LENGTH_LONG).show();
